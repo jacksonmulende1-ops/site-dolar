@@ -353,31 +353,8 @@
 <footer>
   <p>© 2026 DollarSite. All rights reserved.</p>
 </footer>
+
 function showIncome() {
-  document.getElementById("income").style.display = "block";
-
-  document.getElementById("income").scrollIntoView({
-    behavior: "smooth"
-  });
-}
-
-function calculateIncome() {
-  const daily = Number(document.getElementById("dailyIncome").value);
-  const days = Number(document.getElementById("workingDays").value);
-
-  if (daily <= 0 || days <= 0) {
-    document.getElementById("incomeResult").innerText =
-      "Please enter valid numbers.";
-    return;
-  }
-
-  const monthly = daily * days;
-  const yearly = monthly * 12;
-
-  document.getElementById("incomeResult").innerHTML =
-    "Estimated monthly income: $" + monthly.toFixed(2) +
-    "<br>Estimated yearly income: $" + yearly.toFixed(2);
-}
 <script>
 function showCalculator() {
   document.getElementById("calculator").style.display = "block";
