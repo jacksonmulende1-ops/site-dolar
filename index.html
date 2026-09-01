@@ -200,8 +200,30 @@
       <button onclick="alert('Guides coming soon!')">
         Read Guides
       </button>
+        </div>
+
+    <div class="card">
+      <h3>📈 Compound Interest</h3>
+      <p>Calculate how your money can grow with compound interest.</p>
+      <button onclick="showCompound()">Open Calculator</button>
     </div>
 
+  </section>
+
+  <section class="calculator" id="compound" style="display:none;">
+    <h2>Compound Interest Calculator</h2>
+
+    <input type="number" id="principal" placeholder="Initial investment">
+
+    <input type="number" id="monthlyDeposit" placeholder="Monthly deposit">
+
+    <input type="number" id="interestRate" placeholder="Annual interest rate (%)">
+
+    <input type="number" id="years" placeholder="Number of years">
+
+    <button onclick="calculateCompound()">Calculate</button>
+
+    <div id="compoundResult"></div>
   </section>
 
   <section class="calculator" id="calculator" style="display:none;">
@@ -286,6 +308,37 @@ function convertCurrency() {
   document.getElementById("conversionResult").innerText =
     amount.toFixed(2) + " " + from +
     " = " + result.toFixed(2) + " " + to;
+}function showCompound() {
+  document.getElementById("compound").style.display = "block";
+
+  document.getElementById("compound").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function calculateCompound() {
+  const principal = Number(document.getElementById("principal").value);
+  const monthly = Number(document.getElementById("monthlyDeposit").value);
+  const annualRate = Number(document.getElementById("interestRate").value);
+  const years = Number(document.getElementById("years").value);
+
+  if (principal < 0 || monthly < 0 || annualRate < 0 || years <= 0) {
+    document.getElementById("compoundResult").innerText =
+      "Please enter valid numbers.";
+    return;
+  }
+
+  const monthlyRate = annualRate / 100 / 12;
+  const months = years * 12;
+
+  let total = principal;
+
+  for (let i = 0; i < months; i++) {
+    total = total * (1 + monthlyRate) + monthly;
+  }
+
+  document.getElementById("compoundResult").innerText =
+    "Estimated final balance: $" + total.toFixed(2);
 }</script>
 
 </body>
