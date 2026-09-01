@@ -338,9 +338,26 @@
   </div>
 
   <div class="card">
-    <h3>💳 How to Manage Debt</h3>
-    <p>Learn practical ways to understand and manage debt.</p>
-    <button onclick="alert('Guide coming soon!')">Read Guide</button>
+  <h3>💳 How to Manage Debt</h3>
+  <p>Learn practical ways to understand and manage debt.</p>
+
+  <button onclick="showDebtGuide()">Read Guide</button>
+
+  <div id="debtGuide" style="display:none;">
+    <h4>Smart Ways to Manage Debt</h4>
+
+    <p>1. List all your debts and their interest rates.</p>
+
+    <p>2. Make your payments on time to avoid unnecessary fees.</p>
+
+    <p>3. Focus on paying down high-interest debt first.</p>
+
+    <p>4. Avoid taking on new debt unless it is necessary and affordable.</p>
+
+    <p>5. Create a simple budget so you know how much you can safely use for debt payments.</p>
+
+    <p>Remember: good debt management starts with understanding what you owe and having a realistic repayment plan.</p>
+  </div>
   </div>
 </section>
 
@@ -507,6 +524,9 @@ function showSaveGuide() {
   }
   function showCompoundGuide() {
   document.getElementById("compoundGuide").style.display = "block";
+  }
+  function showDebtGuide() {
+  document.getElementById("debtGuide").style.display = "block";
   }
 function calculateIncome() {
   const daily = Number(document.getElementById("dailyIncome").value);
