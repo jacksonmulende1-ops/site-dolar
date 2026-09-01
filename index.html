@@ -352,9 +352,38 @@
 
 <footer>
   <p>© 2026 DollarSite. All rights reserved.</p>
-</footer>
+<section class="guides">
+  <h2>💡 Money Guides</h2>
+  <p>Practical guides to help you save, manage and grow your money.</p>
 
-function showIncome() {
+  <div class="card">
+    <h3>💰 How to Save Money</h3>
+    <p>Simple strategies to build better saving habits.</p>
+    <button onclick="alert('Guide coming soon!')">Read Guide</button>
+  </div>
+
+  <div class="card">
+    <h3>💵 How to Make Money Online</h3>
+    <p>Explore legitimate ways to earn income online.</p>
+    <button onclick="alert('Guide coming soon!')">Read Guide</button>
+  </div>
+
+  <div class="card">
+    <h3>📈 How Compound Interest Works</h3>
+    <p>Learn how your money can grow over time.</p>
+    <button onclick="alert('Guide coming soon!')">Read Guide</button>
+  </div>
+
+  <div class="card">
+    <h3>💳 How to Manage Debt</h3>
+    <p>Learn practical ways to understand and manage debt.</p>
+    <button onclick="alert('Guide coming soon!')">Read Guide</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 DollarSite. All rights reserved.</p>
+</footer>
 <script>
 function showCalculator() {
   document.getElementById("calculator").style.display = "block";
@@ -499,7 +528,8 @@ function calculateLoan() {
     "Monthly payment: $" + payment.toFixed(2) +
     "<br>Total payment: $" + totalPayment.toFixed(2) +
     "<br>Total interest: $" + totalInterest.toFixed(2);
-  }function showIncome() {
+  }
+  function showIncome() {
   document.getElementById("income").style.display = "block";
 
   document.getElementById("income").scrollIntoView({
@@ -523,7 +553,8 @@ function calculateIncome() {
   document.getElementById("incomeResult").innerHTML =
     "Estimated monthly income: $" + monthly.toFixed(2) +
     "<br>Estimated yearly income: $" + yearly.toFixed(2);
-  }</script>
+  }
+</script>
 
 </body>
 </html>
