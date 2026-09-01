@@ -155,6 +155,25 @@
       <p>Calculate how much you can save over time.</p>
       <button onclick="showCalculator()">Open Calculator</button>
     </div>
+    <section class="calculator" id="calculator" style="display:none;">
+  <h2>Savings Calculator</h2>
+
+  <input
+    type="number"
+    id="monthly"
+    placeholder="Monthly savings ($)"
+  >
+
+  <input
+    type="number"
+    id="months"
+    placeholder="Number of months"
+  >
+
+  <button onclick="calculateSavings()">Calculate</button>
+
+  <div id="result"></div>
+    </section>
 
 <div class="card">
   <h3>💱 Currency Converter</h3>
