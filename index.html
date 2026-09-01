@@ -275,6 +275,60 @@
   <button onclick="calculateIncome()">Calculate</button>
 
   <div id="incomeResult"></div>
+</section><section class="calculator" id="income" style="display:none;">
+  <h2>Online Income Calculator</h2>
+
+  <input
+    type="number"
+    id="dailyIncome"
+    placeholder="Daily income ($)"
+  >
+
+  <input
+    type="number"
+    id="workingDays"
+    placeholder="Working days per month"
+  >
+
+  <button onclick="calculateIncome()">Calculate</button>
+
+  <div id="incomeResult"></div>
+</section><section class="calculator" id="income" style="display:none;">
+  <h2>Online Income Calculator</h2>
+
+  <input
+    type="number"
+    id="dailyIncome"
+    placeholder="Daily income ($)"
+  >
+
+  <input
+    type="number"
+    id="workingDays"
+    placeholder="Working days per month"
+  >
+
+  <button onclick="calculateIncome()">Calculate</button>
+
+  <div id="incomeResult"></div>
+</section> <section class="calculator" id="income" style="display:none;">
+  <h2>Online Income Calculator</h2>
+
+  <input
+    type="number"
+    id="dailyIncome"
+    placeholder="Daily income ($)"
+  >
+
+  <input
+    type="number"
+    id="workingDays"
+    placeholder="Working days per month"
+  >
+
+  <button onclick="calculateIncome()">Calculate</button>
+
+  <div id="incomeResult"></div>
 </section><h2>Savings Calculator</h2>
 
     <input
@@ -468,6 +522,30 @@ function calculateLoan() {
     "Monthly payment: $" + payment.toFixed(2) +
     "<br>Total payment: $" + totalPayment.toFixed(2) +
     "<br>Total interest: $" + totalInterest.toFixed(2);
+  }function showIncome() {
+  document.getElementById("income").style.display = "block";
+
+  document.getElementById("income").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function calculateIncome() {
+  const daily = Number(document.getElementById("dailyIncome").value);
+  const days = Number(document.getElementById("workingDays").value);
+
+  if (daily <= 0 || days <= 0) {
+    document.getElementById("incomeResult").innerText =
+      "Please enter valid numbers.";
+    return;
+  }
+
+  const monthly = daily * days;
+  const yearly = monthly * 12;
+
+  document.getElementById("incomeResult").innerHTML =
+    "Estimated monthly income: $" + monthly.toFixed(2) +
+    "<br>Estimated yearly income: $" + yearly.toFixed(2);
   }</script>
 
 </body>
