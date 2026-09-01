@@ -301,11 +301,22 @@
   </div>
 </div>
 
-  <div class="card">
-    <h3>💵 How to Make Money Online</h3>
-    <p>Explore legitimate ways to earn income online.</p>
-    <button onclick="alert('Guide coming soon!')">Read Guide</button>
+<div class="card">
+  <h3>💵 How to Make Money Online</h3>
+  <p>Explore legitimate ways to earn income online.</p>
+
+  <button onclick="showOnlineGuide()">Read Guide</button>
+
+  <div id="onlineGuide" style="display:none;">
+    <h4>Legitimate Ways to Earn Online</h4>
+
+    <p>1. Freelancing — offer skills such as writing, design or programming.</p>
+    <p>2. Digital products — create and sell useful digital products.</p>
+    <p>3. Content creation — build an audience and monetize your content.</p>
+    <p>4. Online services — provide useful services to businesses or individuals.</p>
+    <p>5. Learn first — avoid websites promising guaranteed or instant money.</p>
   </div>
+</div>
 
   <div class="card">
     <h3>📈 How Compound Interest Works</h3>
@@ -477,6 +488,9 @@ function calculateLoan() {
 }
 function showSaveGuide() {
   document.getElementById("saveGuide").style.display = "block";
+  }
+  function showOnlineGuide() {
+  document.getElementById("onlineGuide").style.display = "block";
   }
 function calculateIncome() {
   const daily = Number(document.getElementById("dailyIncome").value);
