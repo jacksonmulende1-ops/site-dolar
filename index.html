@@ -464,7 +464,9 @@ function calculateLoan() {
     behavior: "smooth"
   });
 }
-
+function showSaveGuide() {
+  document.getElementById("saveGuide").style.display = "block";
+  }
 function calculateIncome() {
   const daily = Number(document.getElementById("dailyIncome").value);
   const days = Number(document.getElementById("workingDays").value);
