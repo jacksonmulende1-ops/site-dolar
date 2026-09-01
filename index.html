@@ -207,7 +207,35 @@
       <p>Calculate how your money can grow with compound interest.</p>
       <button onclick="showCompound()">Open Calculator</button>
     </div>
+<div class="card">
+  <h3>💳 Loan Calculator</h3>
+  <p>Estimate your monthly loan payment.</p>
+  <button onclick="showLoan()">Open Calculator</button>
+</div> <section class="calculator" id="loan" style="display:none;">
+  <h2>Loan Calculator</h2>
 
+  <input
+    type="number"
+    id="loanAmount"
+    placeholder="Loan amount"
+  >
+
+  <input
+    type="number"
+    id="loanRate"
+    placeholder="Annual interest rate (%)"
+  >
+
+  <input
+    type="number"
+    id="loanYears"
+    placeholder="Loan term (years)"
+  >
+
+  <button onclick="calculateLoan()">Calculate</button>
+
+  <div id="loanResult"></div>
+</section>
   </section>
 
   <section class="calculator" id="compound" style="display:none;">
@@ -356,7 +384,47 @@ function calculateCompound() {
   document.getElementById("compoundResult").innerText =
     "Estimated final balance: $" + total.toFixed(2);
 }
-</script>
+function showLoan() {
+  document.getElementById("loan").style.display = "block";
+
+  document.getElementById("loan").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function calculateLoan() {
+  const amount = Number(document.getElementById("loanAmount").value);
+  const annualRate = Number(document.getElementById("loanRate").value);
+  const years = Number(document.getElementById("loanYears").value);
+
+  if (amount <= 0 || annualRate < 0 || years <= 0) {
+    document.getElementById("loanResult").innerText =
+      "Please enter valid numbers.";
+    return;
+  }
+
+  const monthlyRate = annualRate / 100 / 12;
+  const months = years * 12;
+
+  let payment;
+
+  if (monthlyRate === 0) {
+    payment = amount / months;
+  } else {
+    payment =
+      amount *
+      (monthlyRate * Math.pow(1 + monthlyRate, months)) /
+      (Math.pow(1 + monthlyRate, months) - 1);
+  }
+
+  const totalPayment = payment * months;
+  const totalInterest = totalPayment - amount;
+
+  document.getElementById("loanResult").innerHTML =
+    "Monthly payment: $" + payment.toFixed(2) +
+    "<br>Total payment: $" + totalPayment.toFixed(2) +
+    "<br>Total interest: $" + totalInterest.toFixed(2);
+  }</script>
 
 </body>
 </html>
