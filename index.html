@@ -319,9 +319,22 @@
 </div>
 
   <div class="card">
-    <h3>📈 How Compound Interest Works</h3>
-    <p>Learn how your money can grow over time.</p>
-    <button onclick="alert('Guide coming soon!')">Read Guide</button>
+  <h3>📈 How Compound Interest Works</h3>
+  <p>Learn how your money can grow over time.</p>
+
+  <button onclick="showCompoundGuide()">Read Guide</button>
+
+  <div id="compoundGuide" style="display:none;">
+    <h4>Understanding Compound Interest</h4>
+
+    <p>Compound interest means earning interest on your original money and on the interest you have already earned.</p>
+
+    <p>For example, if you invest $100 and earn interest, your balance can grow faster over time because future interest is calculated on the growing balance.</p>
+
+    <p>The longer you keep your money invested and continue adding money, the greater the potential growth.</p>
+
+    <p>Always consider the interest rate, fees, inflation and investment risks before making financial decisions.</p>
+  </div>
   </div>
 
   <div class="card">
@@ -491,6 +504,9 @@ function showSaveGuide() {
   }
   function showOnlineGuide() {
   document.getElementById("onlineGuide").style.display = "block";
+  }
+  function showCompoundGuide() {
+  document.getElementById("compoundGuide").style.display = "block";
   }
 function calculateIncome() {
   const daily = Number(document.getElementById("dailyIncome").value);
