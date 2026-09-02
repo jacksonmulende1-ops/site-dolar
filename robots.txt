@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jacksonmulende1-ops.github.io/site-dolar/sitemap.xml
